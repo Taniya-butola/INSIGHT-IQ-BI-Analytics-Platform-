@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-base: #0b1220;
+  --color-surface: #131b2e;
+  --color-surface-raised: #1a2540;
+  --color-border: #232e47;
+  --color-ink: #e7ecf5;
+  --color-ink-muted: #8b96ad;
+}
+
+html.light {
+  --color-base: #f5f7fb;
+  --color-surface: #ffffff;
+  --color-surface-raised: #ffffff;
+  --color-border: #e2e8f3;
+  --color-ink: #101728;
+  --color-ink-muted: #5b6478;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-base);
+  color: var(--color-ink);
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: #2dd4a7;
+  color: #06110d;
+}
+
+/* Signature ambient pulse-line animation, used on auth screens */
+@keyframes pulse-travel {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.pulse-path {
+  stroke-dasharray: 6 6;
+  animation: pulse-travel 22s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-path {
+    animation: none;
+  }
+}
+
+/* Visible keyboard focus ring across the app */
+:focus-visible {
+  outline: 2px solid #2dd4a7;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
