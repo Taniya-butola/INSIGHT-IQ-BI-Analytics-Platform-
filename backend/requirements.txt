@@ -11,3 +11,4 @@ email-validator==2.2.0
 scikit-learn==1.5.2
 reportlab==4.2.5
 requests==2.32.3
+gunicorn==21.2.2
